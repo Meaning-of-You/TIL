@@ -72,9 +72,21 @@ git remote remove <remote name>
 
 
 
-- 기본사용법
+- 기본 사용법
 
 ```bash
 git push origin master
+```
+
+
+
+##### status
+
+git의 현재 상태를 확인하는 명령어
+
+- 기본 사용법
+
+```bash
+git status
 ```
 
