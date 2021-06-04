@@ -4,13 +4,23 @@
 
 
 
-![Git - Git 기초](command.assets/areas.png)
+![20210604_170604](command.assets/20210604_170604.png)
 
 
 
 ##### init
 
 `.git` 폴더를 생성해주는 명령어, 처음 한번만 실행
+
+
+
+- 기본 사용법
+
+```bash
+git init
+```
+
+
 
 
 
@@ -80,13 +90,59 @@ git push origin master
 
 
 
+##### pull
+
+원격저장소에 저장되어 있는 커밋들을 로컬에 업로드하는 명령어
+
+
+
+- 기본 사용법
+
+```bash
+git pull origin master
+```
+
+
+
+##### clone
+
+원격이나 로컬에 있는 저장소로부터 커밋을 복사해서 로컬에 복사본을 만드는 명령어
+
+
+
+- 기본 사용법
+
+```bash
+git clone <URL>
+```
+
+
+
 ##### status
 
-git의 현재 상태를 확인하는 명령어
+Git의 현재 상태를 확인하는 명령어
+
+
 
 - 기본 사용법
 
 ```bash
 git status
 ```
+
+
+
+##### log
+
+Git의 소스 변경 이력을 출력하는 명령어
+
+
+
+- 기본 사용법
+
+```bash
+git log
+```
+
+
 
