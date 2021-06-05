@@ -24,7 +24,8 @@ type(i)
 ```
 
 ```markdown
-out: int
+out: 
+int
 ```
 
 - 진법
@@ -47,7 +48,8 @@ type(f)
 ```
 
 ```markdown
-out: float
+out: 
+float
 ```
 
 
@@ -64,7 +66,8 @@ type(c)
 ```
 
 ```markdown
-out: complex
+out: 
+complex
 ```
 
 
@@ -86,7 +89,8 @@ type(b)
 ```
 
 ```markdown
-out: bool
+out: 
+bool
 ```
 
 - True는 1, False는 0에 대응
@@ -97,8 +101,9 @@ print(False + 1)
 ```
 
 ```markdown
-out: 2
-	 1
+out: 
+2
+1
 ```
 
 
@@ -127,8 +132,9 @@ type(str2)
 ```
 
 ```markdown
-out: str 
-	 str
+out: 
+str 
+str
 ```
 
 - 문자열 안에 큰 따옴표(")나 작은 따옴표(')를 포함하는 방법
@@ -142,8 +148,9 @@ print(str4)
 ```
 
 ```markdown
-out: str "test3"
-     str 'test4'
+out: 
+str "test3"
+str 'test4'
 ```
 
 - 문자열은 더하기(+)와 곱하기(*)를 이용할 수 있음
@@ -160,8 +167,9 @@ out: str "test3"
   ```
 
   ```markdown
-  out: strtest
-  	 strstrstr
+  out: 
+  strtest
+  strstrstr
   ```
 
 - 문자열과 같은 sequence는 index와 slice가 가능함
@@ -175,8 +183,9 @@ out: str "test3"
   ```
 
   ```markdown
-  out: s
-  	 r t
+  out: 
+  s
+  r t
   ```
 
 
@@ -192,7 +201,8 @@ type(l)
 ```
 
 ```markdown
-out: list
+out: 
+list
 ```
 
 - 리스트도 더하기(+)와 곱하기를 이용할 수 있음
@@ -206,8 +216,9 @@ print(list1 * 3)
 ```
 
 ```markdown
-out: [1, 2, 3, 4, 5, 6, 7, 8]
-	 [1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4]
+out: 
+[1, 2, 3, 4, 5, 6, 7, 8]
+[1, 2, 3, 4, 1, 2, 3, 4, 1, 2, 3, 4]
 ```
 
 - 리스트 메서드
@@ -240,22 +251,24 @@ out: [1, 2, 3, 4, 5, 6, 7, 8]
   ```
 
   ```markdown
-  out: tuple
+  out: 
+  tuple
   ```
-
+  
   - 소괄호(()) 없이 생성하는 방법
-
+  
   ```python
   t2 = 5, 6, 7, 8
   type(t2)
   ```
-
+  
   ```mark
-  out: tuple
+  out: 
+  tuple
   ```
 
   - 인자가 하나만 있는 튜플을 생성하는 방법
-
+  
   ```python
   t3 = (9,)
   t4 = 10,
@@ -280,8 +293,9 @@ type(s)
 ```
 
 ```markdown
-out: {1, 2, 3, 4}
-	 set
+out: 
+{1, 2, 3, 4}
+set
 ```
 
 - 집합 메서드와 연산자
@@ -312,7 +326,8 @@ type(d)
 ```
 
 ```markdown
-out: dict
+out: 
+dict
 ```
 
 - 딕셔너리 메서드
@@ -346,5 +361,6 @@ out: dict
 ```
 
 ```markdown
-out: True
+out: 
+True
 ```
