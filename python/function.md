@@ -89,6 +89,8 @@ out:
 
 한줄로 함수를 표현
 
+- 재사용하지 않을 함수를 만들 때 사용해서 익명함수라고 부르기도 함
+
 ```python
 lambda <인자> : <인자 활용 수행 코드>
 
@@ -138,4 +140,84 @@ out:
   | sum() |          전체 합을 반환           |
   | len() | 항목의 개수(데이터의 길이)를 반환 |
 
-  
+
+
+#####  고차 함수(higher order function)
+
+function을 인자로 사용하거나 return으로 사용할 수 있는 함수
+
+```python
+def num():
+    return 5
+
+def num2(i):
+    return i
+
+num2(num())
+```
+
+```markdown
+out:
+5
+```
+
+
+
+##### 일급 객체 함수(first class function)
+
+함수를 변수나 자료구조에 저장할 수 있는 함수
+
+```python
+def plus(a,b):
+    return a+b
+
+data = plus
+data(2,3)
+```
+
+```markdown
+out:
+5
+```
+
+
+
+##### 클로저(closure)
+
+함수를 중첩해서 사용하는 기법
+
+```python
+def x(a):
+    def y():
+        return a+10
+    return y
+
+result = x(5)
+result()
+```
+
+```markdown
+out:
+15
+```
+
+
+
+##### Recursion
+
+함수가 자기 자신을 다시 실행하는 기법
+
+```python
+def factorial(n):
+    if n == 1:
+        return 1
+    return n*factorial(n-1)
+
+print(factorial(5))
+```
+
+```markdown
+out:
+120
+```
+
