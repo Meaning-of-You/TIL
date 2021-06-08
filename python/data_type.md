@@ -212,28 +212,35 @@ str 'test4'
 
 - 문자열 메서드
 
-|       메서드        |                         설명                          |
-| :-----------------: | :---------------------------------------------------: |
-|      format()       |       변수의 내용을 표시하기 위한 포맷팅을 수행       |
-|       lower()       |                대문자를 소문자로 변경                 |
-|       upper()       |                소문자를 대문자로 변경                 |
-|     swapcase()      |       대문자는 소문자로, 소문자는 대문자로 변경       |
-|       title()       | 모든 단어의 첫글자를 대문자로, 나머지는 소문자로 변경 |
-|    capitalize()     |  문자열의 첫글자만 대문자로, 나머지는 소문자로 변경   |
-|      islower()      |           모든 문자가 소문자이면 True 반환            |
-|      isupper()      |           모든 문자가 대문자이면 True 반환            |
-|     count(str)      |               str이 포함된 개수를 반환                |
-|      find(str)      |    str이 처음 나타나는 위치 반환 (없으면 -1 반환)     |
-|     index(str)      |   str이 처음 나타나는 위치 반환 (없으면 예외 발생)    |
-|      join(str)      |        str을 구성하는 각 문자 사이에 끼워 넣음        |
-|      lstrip()       |                   좌측 공백을 제거                    |
-|      rstrip()       |                   우측 공백을 제거                    |
-|       strip()       |                   양측 공백을 제거                    |
-| replace(str1, str2) |            문자열 안의 str1을 str2로 변경             |
-|       split()       |      공백문자를 기준으로 나누어서 리스트에 저장       |
-|      isalnum()      |       모든 문자가 알파벳이나 숫자이면 True 반환       |
-|      isalpha()      |           모든 문자가 알파벳이면 True 반환            |
-|     isnumeric()     |          모든 문자가 0~9 숫자이면 True 반환           |
+|       메서드        |                          설명                          |
+| :-----------------: | :----------------------------------------------------: |
+|      format()       |       변수의 내용을 표시하기 위한 포맷팅을 수행        |
+|       lower()       |                 대문자를 소문자로 변경                 |
+|       upper()       |                 소문자를 대문자로 변경                 |
+|     swapcase()      |       대문자는 소문자로, 소문자는 대문자로 변경        |
+|       title()       | 모든 단어의 첫글자를 대문자로, 나머지는 소문자로 변경  |
+|    capitalize()     |   문자열의 첫글자만 대문자로, 나머지는 소문자로 변경   |
+|      islower()      |            모든 문자가 소문자이면 True 반환            |
+|      isupper()      |            모든 문자가 대문자이면 True 반환            |
+|     count(str)      |                str이 포함된 개수를 반환                |
+|      find(str)      |     str이 처음 나타나는 위치 반환 (없으면 -1 반환)     |
+|   startwith(str)    | 지정된 str로 시작되면 True, 시작되지 않으면 False 반환 |
+|    endwith(str)     |   지정된 str로 끝나면 True, 끝나지 않으면 False 반환   |
+|     index(str)      |    str이 처음 나타나는 위치 반환 (없으면 예외 발생)    |
+|      join(str)      |        str을 구성하는 각 문자 사이에 끼워 넣음         |
+|     lstrip(str)     |                    좌측 str을 제거                     |
+|     rstrip(str)     |                    우측 str을 제거                     |
+|     strip(str)      |                    양측 str을 제거                     |
+| replace(str1, str2) |             문자열 안의 str1을 str2로 변경             |
+|       split()       |       공백문자를 기준으로 나누어서 리스트에 저장       |
+|      isalnum()      |       모든 문자가 알파벳이나 숫자이면 True 반환        |
+|      isalpha()      |            모든 문자가 알파벳이면 True 반환            |
+|      isdigit()      | 문자와 특수 문자를 포함해서 숫자처럼 생기면 True 반환  |
+|     isnumeric()     |    isdigit()과 유사, 제곱근, 분수 등 까지 True 반환    |
+|    isdecimeric()    |     isdigit()과 유사, 특수문자가 있으면 False 반환     |
+|      isspace()      |             모든 문자가 공백이면 True 반횐             |
+|      isupper()      |            모든 문자가 대문자이면 True 반환            |
+|      islower()      |            모든 문자가 소문자이면 True 반환            |
 
 
 
