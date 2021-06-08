@@ -4,11 +4,17 @@
 
 ![인스턴스 - 해시넷](object_oriented_programming.assets/tM-QTaRHGL1wmfFztA9B23oQVrb76BZVRr8cTXQGV9TiPKntgkdFwF4jynBO30aHyAaDs3ZFryW_xh-kQjn952ZsLHFaAEDgt1M-HwQlfM5xFt9Wd9CqrHiHw1Ra1igmc_MfJP3yqO4ko2Zl88x_QDcjJ23RmKZNNNfP0g)
 
+##### 객체지향 프로그래밍(object-oriented programming)
+
+객체를 만들고 이용할 수 있는 기능을 제공하는 프로그래밍
+
+- 재사용성이 높음
+
+
+
 ##### 객체(object)
 
 속성(상태, 특징)과 행위(행동, 동작, 기능)로 구성된 대상
-
-- 객체지향 프로그래밍(object-oriented programming): 객체를 만들고 이용할 수 있는 기능을 제공하는 프로그래밍 언어
 
 - 속성은 변수로, 객체가 할 수 있는 행동은 함수로 구현
 - 객체를 클래스의 인스턴스(instance)라고 함
