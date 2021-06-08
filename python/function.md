@@ -69,6 +69,124 @@ out:
 
 
 
+##### 매개변수와 인자 사용법
+
+- positional 방식
+
+  - 선언할 때 파라미터 순서와 사용할 때 인자의 입력 순서를 그대로 매칭
+  - 값을 안넣으면 기본값이 사용
+  - 선언할 때 기본값을 쓰면 그 뒤로 모두 기본값이 있어야 함
+
+  ```python
+  def func1(a, b, c=4):
+      print(a, b, c)
+      
+  func1(1,2)
+  ```
+
+  ```markdown
+  out: 
+  1 2 4
+  ```
+
+- keyword 방식
+
+  - 순서에 관계없이 파라미터 이름에 따라 값이 대입
+
+  ```python
+  def func2(a, b, c):
+      print(a, b, c)
+      
+  func2(b=6, a=3, c=9)
+  ```
+
+  ```markdown
+  out: 
+  3 6 9
+  ```
+
+- positional과 keyword 혼합 방식
+
+  ```python
+  def func3(a, b, c):
+      print(a, b, c)
+      
+  func3(1, c=3, b=5)
+  ```
+
+  ```python
+  out:
+  1 5 3
+  ```
+
+- positional only
+
+  - positional 방식으로만 인자를 입력하도록 강제
+  - `/` 앞에 오는 인자들은 positional 방식으로만 입력
+
+  ```python
+  def func4(a, b, c,/):
+      print(a, b, c)
+      
+  func4(2,4,6)
+  ```
+
+  ```markdown
+  out: 
+  2 4 6
+  ```
+
+- keyword only
+
+  - keyeord 방식으로만 인자를 입력하도록 강제
+  - `*` 뒤에 오는 인자들은 keyword 방식으로만 입력 
+
+  ```python
+  def func5(*, a, b, c):
+      print(a, b, c)
+      
+  func5(a=7, c=9, b=8)
+  ```
+
+  ```markdown
+  out: 
+  7 8 9
+  ```
+
+- 가변 positional
+
+  - `*`를 붙여서 positional 방식으로 입력되는 인자의 개수에 상관없이 모두 받아옴
+
+  ```python
+  def func6(*a):
+      print(a)
+      
+  func6(1,3,5)
+  ```
+
+  ```markdown
+  out:
+  1 3 5
+  ```
+
+- 가변 keyword
+
+  -  `**`를 붙여서 keyword 방식으로 입력되는 인자의 개수에 상관없이 모두 받아옴
+
+  ```python
+  def func7(**a):
+      print(a)
+      
+  func7(a=1, b=3, c=5)
+  ```
+
+  ```markdown
+  out:
+  {'a': 1, 'b': 3, 'c': 5}
+  ```
+
+  
+
 ##### 변수의 유효  범위
 
 - 지역 변수(local variable)
@@ -80,36 +198,12 @@ out:
 - 이름 공간: 변수를 정의할 때 변수가 저장되는 공간
   - 스코핑 룰(Scoping rule): 지역 영역 > 전역 영역 > 내장 영역 순서대로 변수가 있는지 확인
     - 지역 영역(local scope): 지역 변수를 저장하는 이름 공간
+    
     - 전역 영역(global scope): 전역 변수를 저장하는 이름 공간
+    
     - 내장 영역(built-in scope): 파이썬 자체에서 정의한 이름 공간
-
-
-
-##### 람다(lambda) 함수
-
-한줄로 함수를 표현
-
-- 재사용하지 않을 함수를 만들 때 사용해서 익명함수라고 부르기도 함
-
-```python
-lambda <인자> : <인자 활용 수행 코드>
-
-(lambda <인자> : <인자 활용 수행 코드>) (<인자>)
-
-lambda_func = lambda <인자> : <인자 활용 수행 코드>
-lambda_func(<인자>)
-```
-
-```python
-(lambda x : x**2) (3)
-```
-
-```markdown
-out:
-9
-```
-
-
+    
+      
 
 ##### 내장 함수
 
@@ -139,85 +233,4 @@ out:
   | abs() |           절댓값을 반환           |
   | sum() |          전체 합을 반환           |
   | len() | 항목의 개수(데이터의 길이)를 반환 |
-
-
-
-#####  고차 함수(higher order function)
-
-function을 인자로 사용하거나 return으로 사용할 수 있는 함수
-
-```python
-def num():
-    return 5
-
-def num2(i):
-    return i
-
-num2(num())
-```
-
-```markdown
-out:
-5
-```
-
-
-
-##### 일급 객체 함수(first class function)
-
-함수를 변수나 자료구조에 저장할 수 있는 함수
-
-```python
-def plus(a,b):
-    return a+b
-
-data = plus
-data(2,3)
-```
-
-```markdown
-out:
-5
-```
-
-
-
-##### 클로저(closure)
-
-함수를 중첩해서 사용하는 기법
-
-```python
-def x(a):
-    def y():
-        return a+10
-    return y
-
-result = x(5)
-result()
-```
-
-```markdown
-out:
-15
-```
-
-
-
-##### Recursion
-
-함수가 자기 자신을 다시 실행하는 기법
-
-```python
-def factorial(n):
-    if n == 1:
-        return 1
-    return n*factorial(n-1)
-
-print(factorial(5))
-```
-
-```markdown
-out:
-120
-```
 
