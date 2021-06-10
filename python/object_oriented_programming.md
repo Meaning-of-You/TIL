@@ -4,7 +4,7 @@
 
 ![인스턴스 - 해시넷](object_oriented_programming.assets/tM-QTaRHGL1wmfFztA9B23oQVrb76BZVRr8cTXQGV9TiPKntgkdFwF4jynBO30aHyAaDs3ZFryW_xh-kQjn952ZsLHFaAEDgt1M-HwQlfM5xFt9Wd9CqrHiHw1Ra1igmc_MfJP3yqO4ko2Zl88x_QDcjJ23RmKZNNNfP0g)
 
-##### 객체지향 프로그래밍(object-oriented programming)
+### 객체지향 프로그래밍(object-oriented programming)
 
 객체를 만들고 이용할 수 있는 기능을 제공하는 프로그래밍
 
@@ -159,3 +159,52 @@ stu1 = Student('Tom', 20)
   클래스명.메서드명([인자1, 인자2, ...]):
   ```
 
+
+
+### 상속
+
+![1.7: OOP Inheritance - Engineering LibreTexts](object_oriented_programming.assets/inheritance.png)
+
+- 부모 클래스(상위 클래스 혹은 슈퍼 클래스)
+- 자식 클래스(하위 클래스 혹은 서브 클래스)
+  - 부모 클래스로부터 상속을 받으면 부모 클래스의 속성과 행위를 그대로 이용할 수 있음
+  - 부모 클래스에서 정의한 함수 이름과 자식 클래스에서 정의한 함수 이름이 같은 경우 `부모 클래스명.함수명()`이나 `super().함수명()` 사용 
+
+```python
+class 자식 클래스명(부모 클래스명):
+    <코드 블록>
+```
+
+- 파이썬은 부모 클래스가 하나 이상인 다중 상속을 지원함
+
+```python
+class 자식 클래스명(부모 클래스1, 부모 클래스2, ...):
+    <코드 블록>
+```
+
+
+
+##### 오버라이딩(overriding)
+
+- 상속받은 자식 클래스에서 상속해준 부모클래스에 이미 정의되어 있는 메서드 기능을 확장해서 정의하도록 하는 것
+- 특징
+  - 오버라이드할 메서드가 부모 클래스에 정의되어 있어야 함
+  - 부모 클래스의 메서드를 자식 클래스에서 사용할 때, 메서드 명이 같아야 함
+  - 부모 클래스의 메서드를 자식 클래스에서 사용할 때,  메서드의 파라미터 개수가 같아야 함
+  - 부모 클래스의 메서드를 자식 클래스에서 사용할 때,  메서드의 리턴형을 같지 않아도 됨
+
+
+
+##### 다형성(polymorphism)
+
+- 상속관계에서 다른 클래스의 인스턴스 객체들이 같은 멤버 함수의 호출에 각각 다르게 반응하도록 하는 것
+
+
+
+##### 캡슐화(Encapsulation)
+
+- 필요한 메서드와 멤버를 하나의 단위로 묶어 외부에서 접근 가능하도록 인터페이스를 공개하는 것
+- Python에서는 클래스를 정의할 때 멤버 이름에 따라 접근 지정을 설정
+  - public(_)
+  - private(__)
+  - protected
