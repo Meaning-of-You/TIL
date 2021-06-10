@@ -85,24 +85,6 @@ class Student():
 
 
 
-##### 객체 초기화
-
-- `__init__()`: 객체를 생성하는 것과 동시에 속성값을 지정
-
-```python
-class Student():
-    
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
-        
-stu1 = Student('Tom', 20)
-```
-
-- `__new__()`:  인스턴스화 할 때 자도으로 실행
-
-
-
 ##### 클래스에서 사용하는 변수
 
 - 클래스 변수
@@ -160,6 +142,101 @@ stu1 = Student('Tom', 20)
   ```python
   클래스명.메서드명([인자1, 인자2, ...]):
   ```
+
+
+
+##### decorator
+
+함수 이름 앞에 붙여서 사용되며, 기존의 함수 기능을 수정하지 않고 추가적인 기능을 확장해 주는 역할
+
+- callable이면 사용 가능
+  - function
+  - class(__ init __)
+  - instance(__ call __)
+
+- property decorator
+
+  - 메서드를 not callable로 바꿔줌
+
+  ```python
+  class A:  
+      @property    
+      def pd(self):
+          return 1
+  ```
+
+  ```
+  a = A()
+  a.pd()
+  ```
+
+  ```markdown
+  TypeError: 'int' object is not callable
+  ```
+
+
+
+##### 클래스 내장 모듈
+
+- `__init__()`
+  - 객체를 생성하는 것과 동시에 속성값을 지정
+
+```python
+class Student():
+    
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+        
+stu1 = Student('Tom', 20)
+```
+
+- `__new__()`
+  -  인스턴스화 할 때 자동으로 실행
+- `__class__()`
+  - type()과 유사, 객체의 클래스를 알려줌
+
+- `__getattr__()`
+
+  - 정의되어 있지 않은 인스턴스 변수를 호출 할 때 호출
+
+  ```python
+  class A:
+      def __init__(self,x):
+          self.x = x
+          self.y = 1
+      
+      def __getattr__(self, value):
+          print('call')
+  ```
+
+  ```python
+  a.z
+  ```
+
+  ```markdown
+  out: call
+  ```
+
+- `__setattr__ ()`
+
+  - 인스턴스 변수를 설정할 때 사용
+
+- `__delattr__()`
+
+  - 인스턴스 변수를 삭제할 때 사용
+
+- `__dir__()`
+  - dir()과 유사하지만 정렬을 함
+- `__doc__()`
+  - docstring을 의미 
+  - 함수나 클래스를 선언할 때, Signature 바로 앞에 따옴표 세개를 이용하여 설명을 기재할 수 있음
+- `__dict__()`
+  - vars()와 유사, 인스턴스 안에 정의된 값을 dictionary로 보여줌
+- `__repr__()`
+  - 시스템이 해당 객체를 인식할 수 있는 공식적인 문자열로 나타내줌
+- `__str__()`
+  - 사용자가 보기 쉬운 형태로 보여줄 때 사용
 
 
 
