@@ -91,3 +91,13 @@ match(), search(), findall() 메서드를 수행한 결과로 리턴된 객체
 | MULTILINE  |  M   |             여러 줄과 매치              |
 |  VERBOSE   |  X   |   verbose 모드를 사용할 수 있도록 함    |
 
+
+
+##### Greedy vs Non-Greedy
+
+- Greedy
+  - `*`와 `+` 연산자 사용
+  - 매치할 수 있는 가장 최대한의 반복을 수행
+- Non-Greedy
+  - `?`연산자 사용
+  - 매치할 수 있는 가장 최소한의 반복을 수행
