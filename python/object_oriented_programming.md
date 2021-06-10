@@ -163,6 +163,9 @@ stu1 = Student('Tom', 20)
 
 ### 상속
 
+- 클래스에서 이름 뒤에 오는 괄호는 상속
+- python의 모든 객체는 object를 상속받음
+
 ![1.7: OOP Inheritance - Engineering LibreTexts](object_oriented_programming.assets/inheritance.png)
 
 - 부모 클래스(상위 클래스 혹은 슈퍼 클래스)
@@ -208,3 +211,14 @@ class 자식 클래스명(부모 클래스1, 부모 클래스2, ...):
   - public(_)
   - private(__)
   - protected
+
+
+
+##### 상속관련 메서드
+
+|    메서드    |                 설명                 |
+| :----------: | :----------------------------------: |
+|    mro()     | 상속 체계의 순서를 알려줌, List 반환 |
+| issubclass() |     상속 받았는지의 여부를 확인      |
+| isinstance() |         인스턴스 여부를 확인         |
+
