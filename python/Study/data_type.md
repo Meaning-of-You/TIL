@@ -1,4 +1,4 @@
-# 자료형
+# 자료형(data type)
 
 > python 자료형 정리
 
