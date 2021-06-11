@@ -1,4 +1,4 @@
-# 정규 표현식
+# 정규 표현식(reqular expression)
 
 > python 정규 표현식 정리
 
