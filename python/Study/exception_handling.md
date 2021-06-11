@@ -1,4 +1,4 @@
-# 예외처리
+# 예외처리(exception handling)
 
 > python 예외처리 정리
 
