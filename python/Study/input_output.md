@@ -1,4 +1,4 @@
-# 입력과 출력
+# 입력과 출력(input/output)
 
 > python 입출력 정리
 
