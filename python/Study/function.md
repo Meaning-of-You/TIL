@@ -1,4 +1,4 @@
-# 함수
+# 함수(function)
 
 > python 함수 정리
 
