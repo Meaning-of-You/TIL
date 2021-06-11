@@ -1,4 +1,4 @@
-# 제어문
+# 제어문(control statement)
 
 > python 제어문 정리
 
