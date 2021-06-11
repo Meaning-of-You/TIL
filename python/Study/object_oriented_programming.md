@@ -1,4 +1,4 @@
-# 객체지향 프로그래밍
+# 객체지향 프로그래밍(object oriented programming)
 
 > python 객체지향 프로그래밍 정리
 
