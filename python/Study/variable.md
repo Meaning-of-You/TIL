@@ -1,4 +1,4 @@
-# 변수
+# 변수(variable)
 
 > python 변수 정리
 
