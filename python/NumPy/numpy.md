@@ -400,7 +400,7 @@ array([[ 0,  1],
        [14, 15]])
 ```
 
-##### 
+
 
 ### 배열 한 줄로 변경
 
@@ -649,7 +649,7 @@ out:
 array([False, False, True, True])
 ```
 
-### 
+
 
 ##### 통계 연산
 
@@ -917,5 +917,42 @@ array([[ 6, 22, 38],
 
 ```python
 배열명[행 시작 위치:행 끝 위치, 열 시작 위치:열 끝 위치]
+```
+
+
+
+### 데이터 파일
+
+
+
+##### 파일 읽기
+
+```python
+np.load('file name')
+```
+
+- 텍스트파일
+  - `delimiter='구분자'`: 구분자 지정, 없으면 str로 읽어옴
+
+```python
+np.loadtxt('file name')
+```
+
+
+
+##### 파일 저장하기
+
+- array 객체 하나는 `save()`로 저장
+- 확장자는 자동으로 `.npy`가 붙음
+
+```python
+np.save('file name', 객체)
+```
+
+- array 객체 여러개는 `savez()`로 저장
+- 확장자는 자동으로 `.npz`가 붙음
+
+```python
+np.savez('file name', 객체1, 객체2, ...)
 ```
 
