@@ -2,7 +2,7 @@
 
 > python 패키지 pandas 정리
 
-
+![Pandas Cheat Sheet for Data Science in Python](pandas.assets/Pandas_Cheat_Sheet_for_Data_Science_in_Python_hqirhp.png)
 
 ### pandas
 
