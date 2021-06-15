@@ -55,11 +55,11 @@ plt.figure(n)
 
 ```python
 plt.plot(x, y1)
-plt.figure()
+plt.figure(facecolor='k')
 plt.plot(x, y2)
 ```
 
-![image-20210615225704250](matplotlib.assets/image-20210615225704250.png)
+![image-20210616003818911](matplotlib.assets/image-20210616003818911.png)
 
 ##### 하나의 그래프 창을 하위 영역으로 나눈 후 그리기
 
@@ -192,6 +192,52 @@ plt.legend(data, loc='위치 문자열 / 위치 코드')
 
 ```python
 plt.text(x, y, str)
+```
+
+
+
+##### style
+
+- 그래프 스타일 목록 확인
+
+```python
+plt.style.available
+```
+
+```python
+out:
+['Solarize_Light2',
+ '_classic_test_patch',
+ 'bmh',
+ 'classic',
+ 'dark_background',
+ 'fast',
+ 'fivethirtyeight',
+ 'ggplot',
+ 'grayscale',
+ 'seaborn',
+ 'seaborn-bright',
+ 'seaborn-colorblind',
+ 'seaborn-dark',
+ 'seaborn-dark-palette',
+ 'seaborn-darkgrid',
+ 'seaborn-deep',
+ 'seaborn-muted',
+ 'seaborn-notebook',
+ 'seaborn-paper',
+ 'seaborn-pastel',
+ 'seaborn-poster',
+ 'seaborn-talk',
+ 'seaborn-ticks',
+ 'seaborn-white',
+ 'seaborn-whitegrid',
+ 'tableau-colorblind10']
+```
+
+- 그래프 스타일 적용
+
+```python
+plt.style.use(style)
 ```
 
 
