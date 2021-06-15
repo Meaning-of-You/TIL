@@ -26,26 +26,6 @@ import matplotlib.pyplot as plt
 
 
 
-### 선 그래프
-
-```python
-plt.plot([x,] y [,fmt])
-```
-
-- `x, y`: x축 좌표와 y축 좌표 각각의 요소만 모아서 만든 시퀀스 데이터
-  - x와 y의 시퀀스 길이는 같아야 함
-  - x는 생략 가능, 생략하면 0부터 y의 개수만큼 1씩 증가
-- `fmt`: format string, 다양한 형식으로 그래프를 그릴 수 있는 옵션
-
-```python
-data = [10, 20, 25, 40, 100]
-plt.plot(data)
-```
-
-![image-20210615224753623](matplotlib.assets/image-20210615224753623.png)
-
-
-
 ### 그래프 그리기
 
 ```python
@@ -211,4 +191,52 @@ plt.legend(data, loc='위치 문자열 / 위치 코드')
 ```python
 plt.text(x, y, str)
 ```
+
+
+
+### 선 그래프
+
+순서가 있는 데이터를 시각화하거나 시간에 따라 변하는 숫자 데이터를 시각화 하는데 유용
+
+```python
+plt.plot([x,] y [,fmt])
+```
+
+- `x, y`: x축 좌표와 y축 좌표 각각의 요소만 모아서 만든 시퀀스 데이터
+  - x와 y의 시퀀스 길이는 같아야 함
+  - x는 생략 가능, 생략하면 0부터 y의 개수만큼 1씩 증가
+- `fmt`: format string, 다양한 형식으로 그래프를 그릴 수 있는 옵션
+
+```python
+data = [10, 20, 25, 40, 100]
+plt.plot(data)
+```
+
+![image-20210615224753623](matplotlib.assets/image-20210615224753623.png)
+
+
+
+### 산점도
+
+두 개의 요소로 이뤄진 데이터의 집합 관계를 시각화하는 데 유용
+
+- `s`: 마커의 크기
+- `c`: 컬러
+- `marker`: 마커의 모양
+- `alpha`: 투명도, 0을 지정하면 완전 투명이고 1을 지정하면 완전 불투명
+
+```python
+plt.scatter(x, y [,s=size_n, c=colors, marker='marker_string', alpha=alpha_f])
+```
+
+```python
+height = [168, 155, 170, 173, 180, 160]
+weight = [70, 49, 66, 60, 80, 55]
+
+size = 100 * np.arange(1,7)
+colors = ['r', 'g', 'b', 'c', 'm', 'k']
+plt.scatter(height, weight, s=size, c=colors)
+```
+
+![image-20210615234850763](matplotlib.assets/image-20210615234850763.png)
 
