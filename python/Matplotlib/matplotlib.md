@@ -4,6 +4,8 @@
 
 
 
+![image-20210616001509222](matplotlib.assets/image-20210616001509222.png)
+
 ### matplotlib
 
 파이썬에서 데이터를 효과적으로 시각화하기 위해 만든 라이브러리
@@ -194,6 +196,21 @@ plt.text(x, y, str)
 
 
 
+### 그래프 저장
+
+그래프를 이미지 파일로 저장
+
+-  확장자에는 'eps, jpeg, jpg, pdf, pgf, png, ps, raw, rgba, svg, svgz, tif, tiff'가 있음
+- `dpi`: dots per inch, 숫자가 클수록 해상도가 높아지고 용량이 커짐
+
+```python
+plt.savefig(file_name, [,dpi=dpi_n])
+```
+
+
+
+
+
 ### 선 그래프
 
 순서가 있는 데이터를 시각화하거나 시간에 따라 변하는 숫자 데이터를 시각화 하는데 유용
@@ -220,8 +237,6 @@ plt.plot(data)
 
 두 개의 요소로 이뤄진 데이터의 집합 관계를 시각화하는 데 유용
 
-- `s`: 마커의 크기
-- `c`: 컬러
 - `marker`: 마커의 모양
 - `alpha`: 투명도, 0을 지정하면 완전 투명이고 1을 지정하면 완전 불투명
 
@@ -239,4 +254,108 @@ plt.scatter(height, weight, s=size, c=colors)
 ```
 
 ![image-20210615234850763](matplotlib.assets/image-20210615234850763.png)
+
+
+
+### 막대 그래프
+
+값을 막대의 높이로 나타내므로 여러 항목의 데이터를 서로 비교할 때 이용
+
+- `height`: 막대 그래프의 데이터
+- `width`: 폭, [0, 1] 사이의 실수
+- `tick_label`: 막대 그래프 각각의 이름 지정
+- `align`: 막대 그래프의 위치, center는 가운데이고 edge는 한쪽으로 치우침
+
+
+
+##### bar()
+
+세로 막대 그래프
+
+```python
+plt.bar(x, height [,width=width_f, color=colors, tick_label=tick_labels, align='center' 혹은 'edge', label=labels])
+```
+
+```python
+n_len = len(names)
+index = np.arange(n_len)
+
+names = ['kim', 'lee', 'park']
+before_ko = [88, 72, 65]
+after_ko = [95, 80, 90]
+
+plt.bar(index, before_ko, color='r', align='edge', width=0.4, label='before')
+plt.bar(index+0.4, after_ko, color='b', align='edge', width=0.4, label='after')
+plt.xticks(index+0.4, names)
+plt.legend()
+```
+
+![image-20210616000509733](matplotlib.assets/image-20210616000509733.png)
+
+##### barh()
+
+가로 막대 그래프
+
+- width 옵션 사용 불가
+
+```python
+n_len = len(names)
+index = np.arange(n_len)
+
+names = ['kim', 'lee', 'park']
+after_ko = [95, 80, 90]
+
+plt.barh(index+0.4, after_ko, color='b', tick_label=names)
+```
+
+![image-20210616001118711](matplotlib.assets/image-20210616001118711.png)
+
+
+
+### 히스토그램
+
+![통계](matplotlib.assets/zoyf-3oazrk3hPiIBiLzByoLc8c7GvqszbacIaWkJivkVS6ffGsF68dwL4Tie-_wG5vFmIlPY5JA5ZY1_2jsiQatfVoNx8apPS_QntR__M4_CrKSG6c_CUy77heQ)
+
+데이터를 정해진 간격으로 나눈 후 그 간격 안에 들어간 데이터 개수를 막대로 표시한 그래프로, 도수분포표를 막대 그래프로 시각화
+
+- `bins`: 계급의 개수
+
+```python
+plt.hits(x, [,bins_n 혹은 'auto'])
+```
+
+```python
+score = [88, 75, 35, 68, 99, 48, 25, 77, 51, 90, 80, 62, 35, 84, 54, 29, 43]
+plt.hist(score)
+```
+
+![image-20210616001857787](matplotlib.assets/image-20210616001857787.png)
+
+### 파이 그래프
+
+원 안에 데이터의 각 항목이 차지하는 비율만큼 부채꼴의 크기를갖는 영역으로 이뤄진 그래프
+
+- `labels`: 각 부채꼴 부분에 문자열 표시
+- `autopct`: 각 부채꼴 부분에 항목의 비율이 표시되는 숫자 형식 지정
+- `shadow`: 그림자 효과
+- `explod`: 부채꼴 부분이 원에서 돌출되는 효과
+- `counterclock`: 부채꼴이 그려지는 순서가 반시계 방향인지 시계 방향인지 지정
+- `startangle`: 제일 처음 부채꼴이 그려지는 각도 지정
+
+```python
+plt.pie(x, [,labels=labels_seq, autopct='비율 표시 형식', shadow = False 혹은 True, explod = explod_seq, counterclock = True 혹은 False, startangle = 각도])
+```
+
+```python
+score = ['A', 'B', 'C', 'D', 'F']
+result = [20, 30, 30, 10, 10]
+
+explode_v = (0.1, 0, 0, 0, 0)
+
+plt.figure(figsize=(5,5))
+plt.pie(result, labels=score, autopct='%.0f%%', explode=explode_v)
+plt.show()
+```
+
+![image-20210616002857588](matplotlib.assets/image-20210616002857588.png)
 
