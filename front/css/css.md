@@ -597,8 +597,359 @@ ul li{
 
 ![image-20210621202503666](css.assets/image-20210621202503666.png)
 
+
+
+### visibility
+
+요소 박스를 표시하거나 감출때 사용되는 속성
+
+- display:none과 비슷하지만 visibility:hidden은 요소의 원래공간은 유지
+
+
+
+### overflow
+
+콘텐츠가 블록박스의 크기를 넘어가는 경우에 사용하는 속성
+
+display:none => 요소의 원래 공간이 없어지면서 요소도 안보임
+
+visibility :hidden => 요소의 원래공간을 유지하면서 요소는 안보임
+
+overflow : hidden => 요소의 범위를 벗어나는 컨텐츠는 안보임
+
+```html
+<style type="text/css">
+#div1 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  visibility: hidden;
+  height: 0px;
+  width: 0px;
+  font-size: 0px;
+}
+
+#div2 {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  overflow : hidden;
+  height: 0px;
+  width: 0px;
+  font-size: 0px;
+}
+
+#div2 {
+  width: 100px;
+  height: 100px;
+  background-color: yellow;
+  overflow : auto;
+  height: 0px;
+  width: 0px;
+  font-size: 0px;
+}
+</style>
+
+<body>
+  <p>before</p>
+  <div id=div1>div1</div>
+  <div id=div2>div2</div>
+  <div id=div3>div3</div>
+  <p>after</p>
+</body>
+```
+
+![image-20210622000458537](css.assets/image-20210622000458537.png)
+
+
+
 ### float
 
 박스의 위치를 부모요소의 안에서 왼쪽 또는 오른쪽으로 이동시키는 기능
 
 - float가 지정된 박스는 문서의 일반적인 흐름에 영향을 받지 않으면서 이동된 위치에 떠 있음
+
+```html
+<style type="text/css">
+.wrap {
+  width: 900px;
+  height: 500px;
+  background-color: yellow;
+}
+#nav{
+  width:250px;
+  height:300px;
+  background-color: green;
+  float: right;
+}
+
+#section{
+  width:600px;
+  height:300px;
+  background-color: olive;
+  float: right;
+}
+
+#footer{
+  width:900px;
+  height:100px;
+  background-color: navy;
+  float: left;
+}
+</style>
+
+<body>
+	<div class="wrap">
+		<div class="box1" id="nav"></div>
+		<div class="box2" id="section"></div>
+		<div class="box3" id="footer"></div>
+	</div>
+</body>
+```
+
+![image-20210621233108771](css.assets/image-20210621233108771.png)
+
+
+
+### menu
+
+```html
+<style type="text/css">
+* {
+  margin: 0;
+  padding: 0;
+  border: 0
+}
+    
+.menulist {
+  width: 294px;
+  height: 34px;
+  background-color: aqua;
+  border-left: 2px solid;
+}
+    
+dl.menulist dt {
+  width: 0px;
+  height: 0px;
+  font-size: 0px;
+  visibility: hidden;
+  text-indent: -2000px;
+}
+    
+dl.menulist dd {
+  border: 2px solid;
+  float: left;
+  border-left-width: 0px;
+  width: 96px;
+  height: 30px;
+}
+
+dl.menulist dd a {
+  width: 96px;
+  height: 30px;
+  display: block;
+  text-align: center;
+  line-height: 30px;
+  text-decoration: none;
+  color: #000000;
+  font: bold 16px/30px nanumgothic, "굴림체", doyum, sanf-serif;
+}
+
+dl.menulist dd a:hover{
+  text-decoration: underline;
+  color: red;
+  font-size: 18px;
+}
+</style>
+
+<body>
+  <dl class="menulist">
+    <dt>메뉴목록</dt>
+    <dd>
+	  <a href="#">공지사항</a>
+	</dd>
+	<dd>
+	  <a href="#">이벤트</a>
+	</dd>
+	<dd>
+	  <a href="#">Q&A</a>
+	</dd>
+	</dl>
+</body>
+```
+
+![image-20210621234123309](css.assets/image-20210621234123309.png)
+
+### position
+
+박스에 대한 배치를 변경할때 사용
+
+- `static`: 순서에 의한 기본 위치를 지정
+- `absolute` : 부모 요소를 기준으로 위치를 지정 (원래의 위치값을 잃음)
+- `relative` : 자기 자신을 기준으로 위치를 지정 (원래의 위치값을 가지고 있음)
+- `fixed` : 스크린을 기준으로 위치를 지정 (원래의 위치값을 잃음)
+
+```html
+<style type="text/css">
+*{
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+}
+    
+.box1{
+  width:500px;
+  height: 100px;
+  background-color: blue;
+  position: static;
+}
+
+.box2 {
+  width: 500px;
+  height: 200px;
+  background-color: yellow;
+  position: relative;
+}
+
+.box3 {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  position: absolute;
+  left: 50px;
+  top: 50px;
+}
+
+.box4 {
+  width: 100px;
+  height: 100px;
+  background-color: green;
+  position: fixed;
+  left: 200px;
+}
+
+</style>
+</head>
+<body>
+  <div class="box1"></div>
+  <div class="box2">
+  <div class="box3"></div>
+  <div class="box4"></div>
+</div>
+
+</body>
+```
+
+![image-20210621234618862](css.assets/image-20210621234618862.png)
+
+
+
+### z-index
+
+화면상에서 요소들이 겹쳐있을때 요소의 위치를 나타내는 속성
+
+```html
+<style type="text/css">
+div {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+    
+#aa {
+  background-color: red;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+}
+
+#bb {
+  background-color: green;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+}
+
+#cc {
+  background-color: blue;
+  top: 20px;
+  left: 20px;
+  z-index: 3;
+}
+</style>
+
+<body>
+  <div id="aa">red</div>
+  <div id="bb">green</div>
+  <div id="cc">blue</div>
+</body>
+```
+
+![image-20210621235849110](css.assets/image-20210621235849110.png)
+
+### white-space
+
+스페이스와 탭, 줄바꿈, 자동줄바꿈을 어떻게 처리할지 정하는 속성
+
+|          | 스페이스와 탭 | 줄바꿈 | 자동 줄바꿈 |
+| :------: | :-----------: | :----: | :---------: |
+|  normal  |     병합      |  병합  |      O      |
+|  nowrap  |     병합      |  병합  |      X      |
+|   pre    |     보존      |  보존  |      X      |
+| pre-wrap |     보존      |  보존  |      O      |
+| pre-line |     병합      |  보존  |      O      |
+
+```html
+<style type="text/css">
+p{
+  font-family: "굴림체";
+  font-size: 16px;
+}
+.t{
+  font-weight: bold;
+  color: purple;
+}
+.a{
+  white-space: normal;
+}
+.b{
+  white-space: nowrap;
+}
+.c{
+  white-space: pre;
+  background-color: aqua;
+}
+.d{
+  white-space: pre-wrap;
+  background-color: yellow;
+}
+.e{
+  white-space: pre-line;
+}
+</style>
+
+<body>
+<p class="t"> white-space: normal;</p>
+<p class="a">    Cascading Style Sheets (CSS) is a stylesheet language used to describe the presentation of a document written in HTML or XML (including XML dialects such as SVG, MathML or XHTML).
+CSS describes how elements should be rendered on screen, on paper, in speech, or on other media.</p>
+    
+<p class="t">white-space: nowrap;</p>
+<p class="b">    Cascading Style Sheets (CSS) is a stylesheet language used to describe the presentation of a document written in HTML or XML (including XML dialects such as SVG, MathML or XHTML). 
+CSS describes how elements should be rendered on screen, on paper, in speech, or on other media.</p>
+    
+<p class="t">white-space: pre;</p>
+<p class="c">    Cascading Style Sheets (CSS) is a stylesheet language used to describe the presentation of a document written in HTML or XML (including XML dialects such as SVG, MathML or XHTML). 
+CSS describes how elements should be rendered on screen, on paper, in speech, or on other media.</p>
+    
+<p class="t">white-space: pre-wrap;</p>
+<p class="d">    Cascading Style Sheets (CSS) is a stylesheet language used to describe the presentation of a document written in HTML or XML (including XML dialects such as SVG, MathML or XHTML). 
+CSS describes how elements should be rendered on screen, on paper, in speech, or on other media.</p>
+    
+<p class="t">white-space: pre-line;</p>
+<p class="e">    Cascading Style Sheets (CSS) is a stylesheet language used to describe the presentation of a document written in HTML or XML (including XML dialects such as SVG, MathML or XHTML). 
+CSS describes how elements should be rendered on screen, on paper, in speech, or on other media.</p>
+</body>
+```
+
+![image-20210622001228159](css.assets/image-20210622001228159.png)
+
