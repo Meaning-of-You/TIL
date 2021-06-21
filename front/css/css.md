@@ -20,21 +20,7 @@ selector {property:value; property:value}
 
 - `value` : 프로퍼티의 값을 지정
 
-
-
-스타일은 인라인스타일 , internal스타일, external스타일이 있다.
-
-인라인스타일 > internal스타일> external스타일
-
-​    
-
-p{color:red} -external
-
-p{color:blue} -internal
-
-p{color:green} -inline
-
-
+  
 
 ### selector 
 
@@ -378,3 +364,241 @@ div.aa {
 ```
 
 ![image-20210621011111811](css.assets/image-20210621011111811.png)
+
+
+
+### text
+
+`line-height`
+
+줄 높이 간격을 지정하는 스타일
+
+ ` text-indent` 
+
++값이면 들여쓰기, -값이면 내여쓰기가 지정되는 스타일
+
+`text-align`
+
+텍스트 정렬을 지정하는 스타일
+
+- left: 왼쪽 정렬
+- right: 오른쪽 정렬
+- justify: 양쪽 정렬
+- center: 가운데 정렬
+
+`text-decoration`
+
+텍스트 장식을 지정하는 스타일
+
+`text-transform`
+
+영문자일때 대소문자로 텍스트를 설정하는 스타일
+
+`letter-spacing`
+
+글자 간을 지정하는 스타일
+
+`word-spacing`
+
+단어 간격을 지정하는 스타일
+
+```html
+<style type="text/css">
+p{
+  line-height: 30px;
+  text-indent: 30px;
+  text-align: left;
+  text-decoration: underline;
+  text-transform: lowercase;
+  letter-spacing: 10px;
+  word-spacing: 10px;
+}
+</style>
+
+<body>
+<p>Cascading Style Sheets (CSS) is a stylesheet language used to describe the presentation of a document written in HTML or XML (including XML dialects such as SVG, MathML or XHTML). 
+CSS describes how elements should be rendered on screen, on paper, in speech, or on other media.</p>
+</body>
+```
+
+![image-20210621194645398](css.assets/image-20210621194645398.png)
+
+
+
+### font
+
+`font-family`
+
+글꼴을 지정하는 스타일
+
+- 한글이나 공백이 있는 속성값들은 묶어서 표현
+
+ `font-style`
+
+폰트 기울임을 지정
+
+- `oblique`: normal 폰트를 기울임
+
+- `italic`: 장식적인 요소가 가미된 기울임
+
+`font-weight`
+
+폰트 굵기를 지정
+
+` font-size`
+
+폰트 크기를 지정
+
+`font-variant`
+
+크기는 그대로 유지하고 소문자를 대문자로 변경
+
+```html
+<style type="text/css">
+p{
+  font-family: serif,"굴림","Times New Roman";
+  font-style: italic;
+  font-weight: bolder;
+  font-size: 20px;
+  font-variant: small-caps;
+}
+</style>
+
+<body>
+  <p>폰트 지정</p>
+</body>
+```
+
+![image-20210621195501557](css.assets/image-20210621195501557.png)
+
+### border
+
+`border-width`
+
+테두리의 두께 지정
+
+`border-style`
+
+테두리의 스타일 지정
+
+`border-color`
+
+테두리의 색상 지정 
+
+```html
+<style type="text/css">
+.dv1{
+  width: 100px;
+  height: 100px;
+  border-width: 5px 10px 15px 20px;
+  border-style: solid dashed double dotted;
+  border-color: red orange yellow green;
+}
+</style>
+
+<body>
+  <div class="dv1"></div>
+</body>
+```
+
+![image-20210621195949991](css.assets/image-20210621195949991.png)
+
+### list
+
+` list-style-type`
+
+list에 기호를 지정
+
+`list-style-position`
+
+- `inside`: 기호가 li요소 안에 배치
+
+- `outside`: 기호가 li요소 밖에 배치
+
+` list-style-image`
+
+기호를 이미지로 표현할때 사용되는 스타일
+
+```html
+<style type="text/css">
+ul{
+  width: 100px;
+  height: 100px;
+}
+ul li{
+  border: 1px solid;
+  list-style-type: square;
+  list-style-position: outside;
+  list-style-image: url('./images/icon.png')
+}
+</style>
+
+<body>
+  <ul>
+    <li>메뉴</li>
+    <li>메뉴</li>
+    <li>메뉴</li>
+  </ul>
+</body>
+```
+
+![image-20210621200753811](css.assets/image-20210621200753811.png)
+
+### display
+
+요소의 레벨을 변경해주는 속성
+
+`inline`
+
+새로운 라인에서 시작하지 않고, 요소의 너비도 해당 라인 전체가 아닌 해당 HTML 요소의 내용만큼만 차지
+
+`block`
+
+언제나 새로운 라인에서 시작하며, 해당 라인의 모든 너비를 차지
+
+`inline-block`
+
+해당 요소 자체는 인라인 요소처럼 동작, 하지만 해당 요소 내부에서는 블록 요소처럼 동작
+
+```html
+<style type="text/css">
+#div1{
+  display: inline;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+  background-color: red;
+  border: 1px solid black;
+}
+#div2{
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+  background-color: yellow;
+  border: 1px solid black;
+}
+#div3{
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  margin-bottom: 10px;
+  background-color: blue;
+  border: 1px solid black;
+}
+</style>
+
+<body>
+  <div id="div1">display</div>
+  <div id="div2">display</div>
+  <div id="div3">display</div>
+</body>
+```
+
+![image-20210621202503666](css.assets/image-20210621202503666.png)
+
+### float
+
+박스의 위치를 부모요소의 안에서 왼쪽 또는 오른쪽으로 이동시키는 기능
+
+- float가 지정된 박스는 문서의 일반적인 흐름에 영향을 받지 않으면서 이동된 위치에 떠 있음
