@@ -46,7 +46,7 @@ cd <프로젝트 이름>
 
 
 
-##### server 실행
+##### server 실행C:\Users\user\testProject\testApp\models.py
 
 ```bash
 python manage.py runserver
@@ -92,7 +92,7 @@ python manage.py migrate
 python manage.py dbshell
 ```
 
-![image-20210629235829008](django_install.assets/image-20210629235829008.png)
+
 
 ##### 생성된 table 확인
 
@@ -100,7 +100,7 @@ python manage.py dbshell
 .tables
 ```
 
-![image-20210629235844460](django_install.assets/image-20210629235844460.png)
+
 
 ##### table 정보 확인
 
