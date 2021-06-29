@@ -46,7 +46,7 @@ cd <프로젝트 이름>
 
 
 
-##### server 실행C:\Users\user\testProject\testApp\models.py
+##### server 실행
 
 ```bash
 python manage.py runserver
@@ -55,6 +55,8 @@ python manage.py runserver
 ![image-20210629235605618](django_install.assets/image-20210629235605618.png)
 
 - `ctrl + c`로 빠져나올 수 있음
+
+
 
 ##### application 생성(추가)
 
@@ -66,13 +68,15 @@ python manage.py startapp <어플리케이션 이름>
 
 
 
+### 모델 생성
+
+
+
 ##### migrations 생성
 
 ```bash
 python manage.py makemigrations
 ```
-
-![image-20210629235735627](django_install.assets/image-20210629235735627.png)
 
 
 
@@ -81,8 +85,6 @@ python manage.py makemigrations
 ```bash
 python manage.py migrate
 ```
-
- ![image-20210629235744330](django_install.assets/image-20210629235744330.png)
 
 
 
