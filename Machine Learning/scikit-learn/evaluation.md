@@ -16,9 +16,33 @@
 
 ![ML 평가 지표](https://blog.kakaocdn.net/dn/PcgVI/btqDZNi6bUG/LxH7xucizjhIbrkLo6AwlK/img.png)
 
-4분면 행렬에서 실제 레이블 클래스 값과 예측 레이블 클래스 값이 어떠한 유형을 가지고 매핑되는지를 나타냄
+이진 분류의 예측 오류가 얼마인지와 더불어 어떠한 유형의 예측 오류가 발생하고 있는지를 함께 나타내는 지표
+
+- `TN`: 예측값을 Negative 값 0으로 예측, 실제 값 역시 Negative 값 0
+- `FP`: 예측값을 Positive 값 1로 예측, 실제 값 역시 Negative 값 0
+- `FN`: 예측값을 Negative 값 0으로 예측, 실제 값 역시  Positive 값 1
+- `TP`: 예측값을  Positive 값 1로 예측, 실제 값 역시  Positive 값 1
 
 
+
+- accuracy(정확도) 
+    전체 데이터 중에 예측이 맞은 비율
+    `accuracy = (TN+TP)/(TN+FP+FN+TP)`
+- pricision(정밀도) - PPV(Positive Predictive Value)
+    양성으로 예측한 것 중에서 양성이 맞는 비율
+    `precision = (TP)/(TP+FP)`
+- recall(재현율) - TPR(True Positive Rate, 민감도)
+    실제 양성인 것 중에서 양성으로 예측한 비율
+    `recall = (TP)/(TP+FN)`
+- F1 Score
+    pricision(정밀도)와 recall(재현율)의 조화평균
+    `F1 Score = 2X(정밀도X재현율)/(정밀도+재현율)`
+- specificity(특이성)
+    Negative(음성)을 Negative(음성)로 예측한 비율
+    `TNR = (TN)/(FP+TN)`
+- FPR
+    Negative(음성)을 Positive(양성)으로 예측한 비율
+    `FPR = (FP)(TN+FP)`
 
 
 
