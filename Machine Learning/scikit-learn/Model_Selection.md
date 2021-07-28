@@ -1,6 +1,6 @@
 # Model Selection 모듈
 
-> scikit-learn의 model selection 모듈 정리
+> scikit-learn의 Model Selection 모듈 정리
 
 
 
