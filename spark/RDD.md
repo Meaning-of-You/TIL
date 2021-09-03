@@ -86,4 +86,42 @@ RDD의 데이터를 조작해 새로운 RDD 생성
 `sumApprox` & `meanApprox`
 
 - 밀리초 단위의 제한 시간을 인자로 받아 메서드가 실행될 최대 시간 결정
-- finalValue 필드와 failure 필드로 구성된 PartialResult 객체를 결과로 반환
+- finalValue 필드와 failure 필드로 구성된 PartialResult 객체를 결과로 반환 
+
+
+
+### Pair RDD
+
+키-값 쌍으로 구성된 RDD
+
+`key` & `values`
+
+Pair RDD의 키 또는 값으로 구성된 새로운 RDD를 가져옴
+
+`countBykey`
+
+각 키의 출현 횟수를 스칼라 Map 형태로 반환
+
+`lookup`
+
+단일 키 값으로 모든 값 가져옴
+
+`mapValues`
+
+키를 변경하지 않고 Pair RDD에 포함된 값만 변경
+
+`flatMapValues`
+
+각 키 값을 0개 또는 한 개 이상 값으로 매핑해 RDD에 포함된 요소 개수 변경
+
+`reduceByKey`
+
+각 키의 모든 값을 동일한 타입의 단일 값으로 병합
+
+`foldByKey`
+
+reduceByKey와 유사, merge 함 수의 인자 목록 바로 앞에 zeroValue 인자를 담은 또 다른 인자 목록을 추가로 전달
+
+`aggregateByKey`
+
+foldByKey와 유사, 값 타입을 바꿀 수 있음
