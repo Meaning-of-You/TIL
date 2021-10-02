@@ -1,3 +1,4 @@
 # kafka 정리
 
-> 분산처리
+> sparkStreaming 중 하나인 kafka
+
